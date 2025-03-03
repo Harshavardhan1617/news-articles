@@ -1,0 +1,13 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ArticleListContainer from "../components/ArticleListContainer.astro";
+import ArticleList from "../components/ArticleList.tsx";
+---
+
+<Layout title="All Articles">
+  <h1 class="text-2xl font-bold mb-4">All Articles</h1>
+  <ArticleListContainer class="p-4" />
+  <client:load>
+    <ArticleList speciesFilter={false} client:load />
+  </client:load>
+</Layout>

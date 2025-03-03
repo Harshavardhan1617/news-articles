@@ -11,7 +11,7 @@ async function getArticles(isSpecies: boolean | null): Promise<Response> {
   const db = new sqlite3.Database(DB_PATH);
 
   return new Promise((resolve) => {
-    let query = "SELECT id, title, image_url FROM articles WHERE is_species IS ";
+    let query = "SELECT id, title, image_url, link FROM articles WHERE is_species IS ";
     let params: any[] = [];
 
     if (isSpecies === true) {
@@ -23,6 +23,8 @@ async function getArticles(isSpecies: boolean | null): Promise<Response> {
     } else {
       query += "NULL"; // ✅ Properly handle NULL case
     }
+
+    query += " ORDER BY id DESC";
 
     db.all(query, params, (err, rows: Article[]) => {
       db.close();
