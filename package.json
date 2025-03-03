@@ -9,6 +9,7 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/netlify": "^6.2.2",
     "@astrojs/solid-js": "^5.0.5",
     "@solidjs/router": "^0.15.3",
     "@tailwindcss/vite": "^4.0.9",
