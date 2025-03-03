@@ -1,5 +1,11 @@
-// @ts-check
-import { defineConfig } from 'astro/config';
+import { defineConfig } from "astro/config";
+import tailwindcss from "@tailwindcss/vite";
 
-// https://astro.build/config
-export default defineConfig({});
+import solid from "@astrojs/solid-js";
+
+export default defineConfig({
+  integrations: [solid()],
+  vite: {
+    plugins: [tailwindcss()],
+  },
+});
