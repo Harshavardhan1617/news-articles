@@ -13,7 +13,7 @@ const ArticleList = (props: ArticleListProps) => {
   onMount(async () => {
     console.log("Fetching articles...");
     try {
-      const response = await fetch(`${import.meta.env.API_URL}/api/articles?species=${props.speciesFilter}`);
+      const response = await fetch(`${import.meta.env.PUBLIC_API}/api/articles?species=${props.speciesFilter}`);
       if (!response.ok) throw new Error("Failed to fetch articles");
 
       const data = await response.json();
