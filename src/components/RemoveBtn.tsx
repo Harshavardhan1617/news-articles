@@ -10,7 +10,7 @@ const RemoveBtn = (props: ButtonProps) => {
   const handleClick = async () => {
     setLoading(true);
     try {
-      await fetch("/api/articles", {
+      await fetch(`${import.meta.env.PUBLIC_API}/api/articles/${props.articleId}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ id: props.articleId, is_species: false }),

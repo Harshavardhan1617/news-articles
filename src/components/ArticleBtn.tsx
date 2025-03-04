@@ -15,7 +15,7 @@ const InteractiveButton = (props: ButtonProps) => {
       window.location.href = props.article_url; // Navigate to the URL
     } else {
       setLoading(true);
-      await fetch("/api/articles", {
+      await fetch(`${import.meta.env.PUBLIC_API}/api/articles/${props.articleId}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ id: props.articleId, is_species: true }),
